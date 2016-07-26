@@ -2,6 +2,11 @@
 of Test Case text documents. The script will only affect text files 
 that begin with 'TC'.
 
+NOTE:
+    Any Test Case file that does not have a 'REQUIREMENTS' section
+    will not be updated by this script. Anytime this is the case
+    an ERROR is printed.
+
 TO RUN:
     Create a text document named 'header.txt' in the same directory as
     this script. The header.txt document is where the new header should
@@ -53,7 +58,7 @@ def replace_header(fileName):
     
     line_number = find_require_ln(fileName)
     if line_number == -1:
-        print('Error finding REQUIREMENTS in ', fileName)
+        print('ERROR: Could not find REQUIREMENTS in ', fileName)
         return
     
     
